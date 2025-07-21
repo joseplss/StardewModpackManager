@@ -21,8 +21,8 @@
         private void InitializeComponent()
         {
             panelTitleBar = new Panel();
-            label1 = new Label();
-            btnMaximizeRestore = new Button();
+            mainFormLabel = new Label();
+            maximizeRestoreBtn = new Button();
             minimizeBtn = new Button();
             closeBtn = new Button();
             panelTitleBar.SuspendLayout();
@@ -30,8 +30,8 @@
             // 
             // panelTitleBar
             // 
-            panelTitleBar.Controls.Add(label1);
-            panelTitleBar.Controls.Add(btnMaximizeRestore);
+            panelTitleBar.Controls.Add(mainFormLabel);
+            panelTitleBar.Controls.Add(maximizeRestoreBtn);
             panelTitleBar.Controls.Add(minimizeBtn);
             panelTitleBar.Controls.Add(closeBtn);
             panelTitleBar.Location = new Point(-7, -30);
@@ -39,42 +39,52 @@
             panelTitleBar.Size = new Size(1325, 61);
             panelTitleBar.TabIndex = 0;
             // 
-            // label1
+            // mainFormLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(596, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(177, 15);
-            label1.TabIndex = 4;
-            label1.Text = "StardewModpackManager";
+            mainFormLabel.AutoSize = true;
+            mainFormLabel.ForeColor = Color.White;
+            mainFormLabel.Location = new Point(596, 36);
+            mainFormLabel.Name = "mainFormLabel";
+            mainFormLabel.Size = new Size(177, 15);
+            mainFormLabel.TabIndex = 4;
+            mainFormLabel.Text = "StardewModpackManager";
             // 
-            // btnMaximizeRestore
+            // maximizeRestoreBtn
             // 
-            btnMaximizeRestore.Location = new Point(1174, 32);
-            btnMaximizeRestore.Name = "btnMaximizeRestore";
-            btnMaximizeRestore.Size = new Size(57, 26);
-            btnMaximizeRestore.TabIndex = 3;
-            btnMaximizeRestore.Text = "button1";
-            btnMaximizeRestore.UseVisualStyleBackColor = true;
-            btnMaximizeRestore.Click += btnMaximizeRestore_Click;
+            maximizeRestoreBtn.BackgroundImage = Properties.Resources.icons8_expand_collapse;
+            maximizeRestoreBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            maximizeRestoreBtn.FlatAppearance.BorderSize = 0;
+            maximizeRestoreBtn.FlatStyle = FlatStyle.Flat;
+            maximizeRestoreBtn.Location = new Point(1174, 37);
+            maximizeRestoreBtn.Name = "maximizeRestoreBtn";
+            maximizeRestoreBtn.Size = new Size(24, 24);
+            maximizeRestoreBtn.TabIndex = 3;
+            maximizeRestoreBtn.UseVisualStyleBackColor = true;
+            maximizeRestoreBtn.Click += btnMaximizeRestore_Click;
             // 
             // minimizeBtn
             // 
-            minimizeBtn.Location = new Point(1090, 32);
+            minimizeBtn.BackgroundImage = Properties.Resources.icons8_minimize;
+            minimizeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            minimizeBtn.FlatAppearance.BorderSize = 0;
+            minimizeBtn.FlatStyle = FlatStyle.Flat;
+            minimizeBtn.Location = new Point(1090, 37);
             minimizeBtn.Name = "minimizeBtn";
-            minimizeBtn.Size = new Size(57, 26);
+            minimizeBtn.Size = new Size(24, 24);
             minimizeBtn.TabIndex = 2;
-            minimizeBtn.Text = "button1";
             minimizeBtn.UseVisualStyleBackColor = true;
             minimizeBtn.Click += minimizeBtn_Click;
             // 
             // closeBtn
             // 
-            closeBtn.Location = new Point(1257, 32);
+            closeBtn.BackgroundImage = Properties.Resources.icons8_close;
+            closeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            closeBtn.FlatAppearance.BorderSize = 0;
+            closeBtn.FlatStyle = FlatStyle.Flat;
+            closeBtn.Location = new Point(1257, 37);
             closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(57, 26);
+            closeBtn.Size = new Size(24, 24);
             closeBtn.TabIndex = 1;
-            closeBtn.Text = "button1";
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += closeBtn_Click;
             // 
@@ -83,7 +93,7 @@
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1310, 592);
+            ClientSize = new Size(1310, 628);
             Controls.Add(panelTitleBar);
             Font = new Font("Arial Rounded MT Bold", 8.830189F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "MainFormcs";
@@ -95,11 +105,10 @@
         }
 
         #endregion
-
         private Panel panelTitleBar;
-        private Button btnMaximizeRestore;
+        private Button maximizeRestoreBtn;
         private Button minimizeBtn;
         private Button closeBtn;
-        private Label label1;
+        private Label mainFormLabel;
     }
 }
