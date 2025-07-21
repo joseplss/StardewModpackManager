@@ -21,7 +21,7 @@
         private void InitializeComponent()
         {
             panelTitleBar = new Panel();
-            label1 = new Label();
+            mainFormLabel = new Label();
             maximizeRestoreBtn = new Button();
             minimizeBtn = new Button();
             closeBtn = new Button();
@@ -30,7 +30,7 @@
             // 
             // panelTitleBar
             // 
-            panelTitleBar.Controls.Add(label1);
+            panelTitleBar.Controls.Add(mainFormLabel);
             panelTitleBar.Controls.Add(maximizeRestoreBtn);
             panelTitleBar.Controls.Add(minimizeBtn);
             panelTitleBar.Controls.Add(closeBtn);
@@ -39,15 +39,15 @@
             panelTitleBar.Size = new Size(1325, 61);
             panelTitleBar.TabIndex = 0;
             // 
-            // label1
+            // mainFormLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(596, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(177, 15);
-            label1.TabIndex = 4;
-            label1.Text = "StardewModpackManager";
-            label1.ForeColor = Color.White;
+            mainFormLabel.AutoSize = true;
+            mainFormLabel.ForeColor = Color.White;
+            mainFormLabel.Location = new Point(596, 36);
+            mainFormLabel.Name = "mainFormLabel";
+            mainFormLabel.Size = new Size(177, 15);
+            mainFormLabel.TabIndex = 4;
+            mainFormLabel.Text = "StardewModpackManager";
             // 
             // maximizeRestoreBtn
             // 
@@ -93,7 +93,7 @@
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1310, 624);
+            ClientSize = new Size(1310, 628);
             Controls.Add(panelTitleBar);
             Font = new Font("Arial Rounded MT Bold", 8.830189F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "MainFormcs";
@@ -109,6 +109,6 @@
         private Button maximizeRestoreBtn;
         private Button minimizeBtn;
         private Button closeBtn;
-        private Label label1;
+        private Label mainFormLabel;
     }
 }
