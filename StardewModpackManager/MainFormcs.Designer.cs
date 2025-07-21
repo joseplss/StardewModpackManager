@@ -47,6 +47,7 @@
             label1.Size = new Size(177, 15);
             label1.TabIndex = 4;
             label1.Text = "StardewModpackManager";
+            label1.ForeColor = Color.White;
             // 
             // maximizeRestoreBtn
             // 

@@ -14,5 +14,21 @@ namespace StardewModpackManager.utils
             FormUtils formUtils = new FormUtils();
             formUtils.SetDefaultFormProperties(form);
         }
+
+        public static string CreateFolderIfNotExists(string folderName)
+        {
+            Console.WriteLine("In Create folder if not exists");
+            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string folderPath = Path.Combine(appDirectory, folderName);
+
+            if (!Directory.Exists(folderPath))
+            {
+                Console.WriteLine("creatfolder if");
+                Directory.CreateDirectory(folderPath);
+            }
+
+            Console.WriteLine("returning value:");
+            return folderPath;
+        }
     }
 }

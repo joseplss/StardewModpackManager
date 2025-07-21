@@ -1,4 +1,5 @@
 ﻿using StardewModpackManager.common;
+using StardewModpackManager.services;
 using StardewModpackManager.utils;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,20 @@ namespace StardewModpackManager
 
             // Set main form button locations
             SetButtonLocation();
+
+            /********************** Initial Logic **********************/
+            // Checks XML file if it exists within data folder, otherwise it creates it
+            XmlService xmlService = new XmlService();
+            string xmlPathCreated = xmlService.CreateXmlFileIfNotExists();
+
+            // Checks if Wizard is complete. If value doesnt exist, it will add to it and set it to false
+            bool isWizardComplete = IsWizardComplete(xmlService, xmlPathCreated);
+
+            if (!isWizardComplete)
+            {    
+                xmlService.AddXMLKeyValue(xmlPathCreated, "userProfile", "isWizardComplete", "false");
+            }
+
         }
 
         private void panelTitleBar_MouseDown(object? sender, MouseEventArgs e)
@@ -120,6 +135,29 @@ namespace StardewModpackManager
             minimizeBtn.Location = new Point(startX, y);
             maximizeRestoreBtn.Location = new Point(startX + minimizeBtn.Width + buttonSpacing, y);
             closeBtn.Location = new Point(startX + minimizeBtn.Width + maximizeRestoreBtn.Width + (buttonSpacing * 2), y);
+        }
+        
+        private static bool IsWizardComplete(XmlService xmlService, string xmlPathCreated)
+        {
+            try
+            {
+                string isWizardComplete = xmlService.GetXMLKeyValue(xmlPathCreated, "isWizardComplete");
+                if (bool.TryParse(isWizardComplete, out bool result))
+                {
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine("Failed to parse isWizardComplete value from XML.");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error checking if wizard is complete: {ex.Message}");
+                xmlService.AddXMLKeyValue(xmlPathCreated, "userProfile", "isWizardComplete", "false");
+                return true;
+            }
         }
 
     }
