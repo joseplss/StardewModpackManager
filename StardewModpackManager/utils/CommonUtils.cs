@@ -12,7 +12,7 @@ namespace StardewModpackManager.utils
         public static void DefaultForm(Form form, Panel panel)
         {
             FormUtils formUtils = new FormUtils();
-            formUtils.DefaultForm(form);
+            formUtils.SetDefaultFormProperties(form);
         }
     }
 }

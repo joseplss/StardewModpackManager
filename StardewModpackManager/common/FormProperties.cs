@@ -12,4 +12,11 @@ namespace StardewModpackManager.common
         Width,
         Height,
     }
+
+    public enum MainFormButton
+    {
+        Close,
+        Minimize,
+        MaximizeRestore,
+    }
 }

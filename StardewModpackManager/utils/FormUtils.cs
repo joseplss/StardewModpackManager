@@ -13,7 +13,7 @@ namespace StardewModpackManager.utils
         private Point lastCursor;
         private Point lastFormLocation;
 
-        public void DefaultForm(Form form)
+        public void SetDefaultFormProperties(Form form)
         {
             // Set the form to be borderless  
             form.FormBorderStyle = FormBorderStyle.None;

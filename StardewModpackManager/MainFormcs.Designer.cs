@@ -22,7 +22,7 @@
         {
             panelTitleBar = new Panel();
             label1 = new Label();
-            btnMaximizeRestore = new Button();
+            maximizeRestoreBtn = new Button();
             minimizeBtn = new Button();
             closeBtn = new Button();
             panelTitleBar.SuspendLayout();
@@ -31,7 +31,7 @@
             // panelTitleBar
             // 
             panelTitleBar.Controls.Add(label1);
-            panelTitleBar.Controls.Add(btnMaximizeRestore);
+            panelTitleBar.Controls.Add(maximizeRestoreBtn);
             panelTitleBar.Controls.Add(minimizeBtn);
             panelTitleBar.Controls.Add(closeBtn);
             panelTitleBar.Location = new Point(-7, -30);
@@ -48,15 +48,15 @@
             label1.TabIndex = 4;
             label1.Text = "StardewModpackManager";
             // 
-            // btnMaximizeRestore
+            // maximizeRestoreBtn
             // 
-            btnMaximizeRestore.Location = new Point(1174, 32);
-            btnMaximizeRestore.Name = "btnMaximizeRestore";
-            btnMaximizeRestore.Size = new Size(57, 26);
-            btnMaximizeRestore.TabIndex = 3;
-            btnMaximizeRestore.Text = "button1";
-            btnMaximizeRestore.UseVisualStyleBackColor = true;
-            btnMaximizeRestore.Click += btnMaximizeRestore_Click;
+            maximizeRestoreBtn.Location = new Point(1174, 32);
+            maximizeRestoreBtn.Name = "maximizeRestoreBtn";
+            maximizeRestoreBtn.Size = new Size(57, 26);
+            maximizeRestoreBtn.TabIndex = 3;
+            maximizeRestoreBtn.Text = "button1";
+            maximizeRestoreBtn.UseVisualStyleBackColor = true;
+            maximizeRestoreBtn.Click += btnMaximizeRestore_Click;
             // 
             // minimizeBtn
             // 
@@ -83,7 +83,7 @@
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1310, 592);
+            ClientSize = new Size(1310, 596);
             Controls.Add(panelTitleBar);
             Font = new Font("Arial Rounded MT Bold", 8.830189F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "MainFormcs";
@@ -97,7 +97,7 @@
         #endregion
 
         private Panel panelTitleBar;
-        private Button btnMaximizeRestore;
+        private Button maximizeRestoreBtn;
         private Button minimizeBtn;
         private Button closeBtn;
         private Label label1;
