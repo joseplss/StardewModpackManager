@@ -39,8 +39,8 @@ namespace StardewModpackManager
             // Set initial colors for a dark theme  
             form.BackColor = Color.FromArgb(30, 30, 30); // Dark background for the main form  
             panel.BackColor = Color.FromArgb(20, 20, 20); // Slightly darker for title bar  
-                                                                  // Set button forecolors to white or light gray  
-                                                                  // Set button flat style and remove border for a modern look  
+            // Set button forecolors to white or light gray  
+            closeBtn.ForeColor = Color.White;
 
             // Set main form button locations
             SetButtonLocation();
