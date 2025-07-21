@@ -93,7 +93,7 @@ namespace StardewModpackManager
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
-                panelTitleBar.Width = GetFormSize(FormSize.Width);
+                panelTitleBar.Width = GetFormSize(FormSize.Width) + 6;
                 panelTitleBar.Height = 61; // Set a fixed height for the title bar
                 // move buttons from panel to move closer to the right
                 closeBtn.Location = new Point(panelTitleBar.Width - 100, 32); // Adjust the X position as needed
