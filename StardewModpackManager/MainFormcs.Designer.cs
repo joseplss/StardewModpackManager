@@ -2,15 +2,10 @@
 {
     partial class MainFormcs
     {
-        /// <summary>
         /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
         /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,26 +17,89 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
         /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            panelTitleBar = new Panel();
+            label1 = new Label();
+            btnMaximizeRestore = new Button();
+            minimizeBtn = new Button();
+            closeBtn = new Button();
+            panelTitleBar.SuspendLayout();
             SuspendLayout();
+            // 
+            // panelTitleBar
+            // 
+            panelTitleBar.Controls.Add(label1);
+            panelTitleBar.Controls.Add(btnMaximizeRestore);
+            panelTitleBar.Controls.Add(minimizeBtn);
+            panelTitleBar.Controls.Add(closeBtn);
+            panelTitleBar.Location = new Point(-7, -30);
+            panelTitleBar.Name = "panelTitleBar";
+            panelTitleBar.Size = new Size(1325, 61);
+            panelTitleBar.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(596, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(177, 15);
+            label1.TabIndex = 4;
+            label1.Text = "StardewModpackManager";
+            // 
+            // btnMaximizeRestore
+            // 
+            btnMaximizeRestore.Location = new Point(1174, 32);
+            btnMaximizeRestore.Name = "btnMaximizeRestore";
+            btnMaximizeRestore.Size = new Size(57, 26);
+            btnMaximizeRestore.TabIndex = 3;
+            btnMaximizeRestore.Text = "button1";
+            btnMaximizeRestore.UseVisualStyleBackColor = true;
+            btnMaximizeRestore.Click += btnMaximizeRestore_Click;
+            // 
+            // minimizeBtn
+            // 
+            minimizeBtn.Location = new Point(1090, 32);
+            minimizeBtn.Name = "minimizeBtn";
+            minimizeBtn.Size = new Size(57, 26);
+            minimizeBtn.TabIndex = 2;
+            minimizeBtn.Text = "button1";
+            minimizeBtn.UseVisualStyleBackColor = true;
+            minimizeBtn.Click += minimizeBtn_Click;
+            // 
+            // closeBtn
+            // 
+            closeBtn.Location = new Point(1257, 32);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(57, 26);
+            closeBtn.TabIndex = 1;
+            closeBtn.Text = "button1";
+            closeBtn.UseVisualStyleBackColor = true;
+            closeBtn.Click += closeBtn_Click;
             // 
             // MainFormcs
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(914, 397);
+            ClientSize = new Size(1310, 592);
+            Controls.Add(panelTitleBar);
             Font = new Font("Arial Rounded MT Bold", 8.830189F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "MainFormcs";
             Text = "MainFormcs";
+            Load += MainFormcs_Load;
+            panelTitleBar.ResumeLayout(false);
+            panelTitleBar.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panelTitleBar;
+        private Button btnMaximizeRestore;
+        private Button minimizeBtn;
+        private Button closeBtn;
+        private Label label1;
     }
 }
