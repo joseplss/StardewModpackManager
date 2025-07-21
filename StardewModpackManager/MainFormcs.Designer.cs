@@ -50,31 +50,40 @@
             // 
             // maximizeRestoreBtn
             // 
-            maximizeRestoreBtn.Location = new Point(1174, 32);
+            maximizeRestoreBtn.BackgroundImage = Properties.Resources.icons8_expand_collapse;
+            maximizeRestoreBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            maximizeRestoreBtn.FlatAppearance.BorderSize = 0;
+            maximizeRestoreBtn.FlatStyle = FlatStyle.Flat;
+            maximizeRestoreBtn.Location = new Point(1174, 37);
             maximizeRestoreBtn.Name = "maximizeRestoreBtn";
-            maximizeRestoreBtn.Size = new Size(57, 26);
+            maximizeRestoreBtn.Size = new Size(24, 24);
             maximizeRestoreBtn.TabIndex = 3;
-            maximizeRestoreBtn.Text = "button1";
             maximizeRestoreBtn.UseVisualStyleBackColor = true;
             maximizeRestoreBtn.Click += btnMaximizeRestore_Click;
             // 
             // minimizeBtn
             // 
-            minimizeBtn.Location = new Point(1090, 32);
+            minimizeBtn.BackgroundImage = Properties.Resources.icons8_minimize;
+            minimizeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            minimizeBtn.FlatAppearance.BorderSize = 0;
+            minimizeBtn.FlatStyle = FlatStyle.Flat;
+            minimizeBtn.Location = new Point(1090, 37);
             minimizeBtn.Name = "minimizeBtn";
-            minimizeBtn.Size = new Size(57, 26);
+            minimizeBtn.Size = new Size(24, 24);
             minimizeBtn.TabIndex = 2;
-            minimizeBtn.Text = "button1";
             minimizeBtn.UseVisualStyleBackColor = true;
             minimizeBtn.Click += minimizeBtn_Click;
             // 
             // closeBtn
             // 
-            closeBtn.Location = new Point(1257, 32);
+            closeBtn.BackgroundImage = Properties.Resources.icons8_close;
+            closeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            closeBtn.FlatAppearance.BorderSize = 0;
+            closeBtn.FlatStyle = FlatStyle.Flat;
+            closeBtn.Location = new Point(1257, 37);
             closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(57, 26);
+            closeBtn.Size = new Size(24, 24);
             closeBtn.TabIndex = 1;
-            closeBtn.Text = "button1";
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += closeBtn_Click;
             // 
@@ -83,7 +92,7 @@
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1310, 600);
+            ClientSize = new Size(1310, 624);
             Controls.Add(panelTitleBar);
             Font = new Font("Arial Rounded MT Bold", 8.830189F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "MainFormcs";
@@ -95,7 +104,6 @@
         }
 
         #endregion
-
         private Panel panelTitleBar;
         private Button maximizeRestoreBtn;
         private Button minimizeBtn;
