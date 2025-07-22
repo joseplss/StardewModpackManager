@@ -31,17 +31,16 @@ namespace StardewModpackManager
         {
             Console.WriteLine("MainFormcs loaded successfully.");
             Form form = FindForm();
-            Panel panel = panelTitleBar;
-            CommonUtils.DefaultForm(form, panel);
+            CommonUtils.DefaultForm(form);
 
             // Attach mouse events to the title bar panel  
-            panel.MouseUp += panelTitleBar_MouseUp!;
-            panel.MouseDown += panelTitleBar_MouseDown!;
-            panel.MouseMove += panelTitleBar_MouseMove!;
+            panelTitleBar.MouseUp += panelTitleBar_MouseUp!;
+            panelTitleBar.MouseDown += panelTitleBar_MouseDown!;
+            panelTitleBar.MouseMove += panelTitleBar_MouseMove!;
 
             // Set initial colors for a dark theme  
             form.BackColor = Color.FromArgb(30, 30, 30); // Dark background for the main form  
-            panel.BackColor = Color.FromArgb(20, 20, 20); // Slightly darker for title bar  
+            panelTitleBar.BackColor = Color.FromArgb(20, 20, 20); // Slightly darker for title bar  
 
             // Set main form button locations
             SetButtonLocation();
@@ -58,6 +57,7 @@ namespace StardewModpackManager
             {
                 xmlService.AddXMLKeyValue(xmlPathCreated, "userProfile", "isWizardComplete", "false");
 
+                CommonUtils.DefaultPanel(wizardPanel_pg1);
                 CenterPanel(wizardPanel_pg1);
                 wizardPanel_pg1.Show();
                 wizardPanelPageIndex = GetIndexOfPanel(wizardPanel_pg1);
