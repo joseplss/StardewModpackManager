@@ -19,14 +19,14 @@ namespace StardewModpackManager.services
                 string xmlFilePath = System.IO.Path.Combine(basePath, "userConfig.xml");
                 if (!System.IO.File.Exists(xmlFilePath))
                 {
-                    var doc = new System.Xml.XmlDocument();
+                    XmlDocument doc = new System.Xml.XmlDocument();
 
                     // Create the root <configuration> element
-                    var root = doc.CreateElement("configuration");
+                    XmlElement root = doc.CreateElement("configuration");
                     doc.AppendChild(root);
 
                     // Create the <userProfile> element and append it to <configuration>
-                    var userProfile = doc.CreateElement("userProfile");
+                    XmlElement userProfile = doc.CreateElement("userProfile");
                     root.AppendChild(userProfile);
 
                     // Save the XML document to the specified path
@@ -35,7 +35,7 @@ namespace StardewModpackManager.services
                 else
                 {
                     // If the file exists, ensure <userProfile> exists as a direct child of <configuration>
-                    var doc = new System.Xml.XmlDocument();
+                    XmlDocument doc = new System.Xml.XmlDocument();
                     doc.Load(xmlFilePath);
 
                     if (doc.DocumentElement == null || doc.DocumentElement.Name != "configuration")
@@ -43,7 +43,7 @@ namespace StardewModpackManager.services
 
                     if (doc.DocumentElement.SelectSingleNode("userProfile") == null)
                     {
-                        var userProfile = doc.CreateElement("userProfile");
+                        XmlElement userProfile = doc.CreateElement("userProfile");
                         doc.DocumentElement.AppendChild(userProfile);
                         doc.Save(xmlFilePath);
                     }
@@ -58,7 +58,7 @@ namespace StardewModpackManager.services
 
         private void SetXMLValue(XmlDocument doc, string parentNodeName, string childNodeName, string value)
         {
-            var parentNode = doc.SelectSingleNode($"/configuration/{parentNodeName}");
+            XmlNode? parentNode = doc.SelectSingleNode($"/configuration/{parentNodeName}");
             if (parentNode == null)
             {
                 throw new InvalidOperationException($"Parent node '{parentNodeName}' does not exist.");

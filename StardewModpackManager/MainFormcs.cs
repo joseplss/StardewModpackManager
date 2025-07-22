@@ -18,6 +18,8 @@ namespace StardewModpackManager
     public partial class MainFormcs : Form
     {
         private bool isDragging = false;
+        private List<Panel> wizardPanelPages = new List<Panel>();
+        private int wizardPanelPageIndex = 0;
         private Point lastCursor;
         private Point lastFormLocation;
         public MainFormcs()
@@ -53,8 +55,18 @@ namespace StardewModpackManager
             bool isWizardComplete = IsWizardComplete(xmlService, xmlPathCreated);
 
             if (!isWizardComplete)
-            {    
+            {
                 xmlService.AddXMLKeyValue(xmlPathCreated, "userProfile", "isWizardComplete", "false");
+
+                CenterPanel(wizardPanel_pg1);
+                wizardPanel_pg1.Show();
+                wizardPanelPageIndex = GetIndexOfPanel(wizardPanel_pg1);
+                // Add the wizard panel to the list of pages
+                wizardPanelPages.Add(wizardPanel_pg1);
+            }
+            else
+            {
+                wizardPanel_pg1.Hide();
             }
 
         }
@@ -108,6 +120,7 @@ namespace StardewModpackManager
                 this.WindowState = FormWindowState.Normal;
             }
             SetButtonLocation();
+            CenterPanel(wizardPanelPages[wizardPanelPageIndex]);
         }
 
         private int GetFormSize(FormSize formSize)
@@ -158,6 +171,26 @@ namespace StardewModpackManager
                 xmlService.AddXMLKeyValue(xmlPathCreated, "userProfile", "isWizardComplete", "false");
                 return true;
             }
+        }
+
+        private void CenterPanel(Panel panel)
+        {
+            // Center the panel within the form  
+            panel.Left = (this.ClientSize.Width - panel.Width) / 2;
+            panel.Top = (this.ClientSize.Height - panel.Height) / 2;
+        }
+
+        private int GetIndexOfPanel(Panel panel)
+        {
+            // tab index will start from 1, so we subtract 1 to get the index
+            return panel.TabIndex - 1;
+        }
+
+        private void NextPageOfPanel(int currentIndex)
+        {
+            wizardPanelPages[wizardPanelPageIndex].Hide();
+            wizardPanelPageIndex++;
+            wizardPanelPages[wizardPanelPageIndex].Show();
         }
 
     }

@@ -25,7 +25,12 @@
             maximizeRestoreBtn = new Button();
             minimizeBtn = new Button();
             closeBtn = new Button();
+            wizardPanel_pg1 = new Panel();
+            wizardPanel_label_pg1 = new Label();
+            setupWizardImg = new PictureBox();
             panelTitleBar.SuspendLayout();
+            wizardPanel_pg1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)setupWizardImg).BeginInit();
             SuspendLayout();
             // 
             // panelTitleBar
@@ -88,12 +93,44 @@
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += closeBtn_Click;
             // 
+            // wizardPanel_pg1
+            // 
+            wizardPanel_pg1.Controls.Add(wizardPanel_label_pg1);
+            wizardPanel_pg1.Controls.Add(setupWizardImg);
+            wizardPanel_pg1.Location = new Point(25, 60);
+            wizardPanel_pg1.Name = "wizardPanel_pg1";
+            wizardPanel_pg1.Size = new Size(1249, 529);
+            wizardPanel_pg1.TabIndex = 1;
+            // 
+            // wizardPanel_label_pg1
+            // 
+            wizardPanel_label_pg1.ForeColor = Color.White;
+            wizardPanel_label_pg1.Location = new Point(425, 290);
+            wizardPanel_label_pg1.MaximumSize = new Size(400, 200);
+            wizardPanel_label_pg1.Name = "wizardPanel_label_pg1";
+            wizardPanel_label_pg1.Size = new Size(400, 200);
+            wizardPanel_label_pg1.TabIndex = 1;
+            wizardPanel_label_pg1.Text = "It looks like the wizard has not set up yet! Set up with the wizard in order to use Stardew Modpack Manager.";
+            // 
+            // setupWizardImg
+            // 
+            setupWizardImg.Image = Properties.Resources.programWizard;
+            setupWizardImg.InitialImage = Properties.Resources.programWizard;
+            setupWizardImg.Location = new Point(485, 13);
+            setupWizardImg.Name = "setupWizardImg";
+            setupWizardImg.Size = new Size(256, 256);
+            setupWizardImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            setupWizardImg.TabIndex = 0;
+            setupWizardImg.TabStop = false;
+            setupWizardImg.WaitOnLoad = true;
+            // 
             // MainFormcs
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1310, 628);
+            ClientSize = new Size(1310, 656);
+            Controls.Add(wizardPanel_pg1);
             Controls.Add(panelTitleBar);
             Font = new Font("Arial Rounded MT Bold", 8.830189F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "MainFormcs";
@@ -101,6 +138,8 @@
             Load += MainFormcs_Load;
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
+            wizardPanel_pg1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)setupWizardImg).EndInit();
             ResumeLayout(false);
         }
 
@@ -110,5 +149,8 @@
         private Button minimizeBtn;
         private Button closeBtn;
         private Label mainFormLabel;
+        private Panel wizardPanel_pg1;
+        private PictureBox setupWizardImg;
+        private Label wizardPanel_label_pg1;
     }
 }
