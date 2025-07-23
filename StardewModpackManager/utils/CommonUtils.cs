@@ -4,15 +4,24 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace StardewModpackManager.utils
 {
     public static class CommonUtils
     {
-        public static void DefaultForm(Form form, Panel panel)
+        public static void DefaultForm(Form form)
         {
             FormUtils formUtils = new FormUtils();
             formUtils.SetDefaultFormProperties(form);
+        }
+
+        public static void DefaultPanel(Panel panel)
+        {
+            FormUtils formUtils = new();
+            formUtils.SetDefaultPanel(panel);
+
         }
 
         public static string CreateFolderIfNotExists(string folderName)

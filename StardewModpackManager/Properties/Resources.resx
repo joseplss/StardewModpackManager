@@ -121,10 +121,13 @@
   <data name="icons8-minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\icons8-minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-expand-collapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\icons8-expand-collapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\icons8-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-expand-collapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\icons8-expand-collapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="programWizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\programWizard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

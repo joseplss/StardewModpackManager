@@ -4,15 +4,12 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StardewModpackManager.utils
 {
     public class FormUtils
     {
-        private bool isDragging = false;
-        private Point lastCursor;
-        private Point lastFormLocation;
-
         public void SetDefaultFormProperties(Form form)
         {
             // Set the form to be borderless  
@@ -23,6 +20,18 @@ namespace StardewModpackManager.utils
 
             // Call the helper method to set the style  
             SetControlStyle(form, ControlStyles.ResizeRedraw, true);
+        }
+
+        public void SetDefaultPanel(Panel panel)
+        {
+            // Set the panel 
+            panel.BorderStyle = BorderStyle.None;
+
+            // Set the panel to be double buffered for smoother rendering
+            EnableDoubleBuffering(panel);
+
+            // Set the panel to redraw on resize
+            SetControlStyle(panel, ControlStyles.ResizeRedraw, true);
         }
 
         private static void EnableDoubleBuffering(Control control)
