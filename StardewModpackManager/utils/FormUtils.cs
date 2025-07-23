@@ -10,10 +10,6 @@ namespace StardewModpackManager.utils
 {
     public class FormUtils
     {
-        private bool isDragging = false;
-        private Point lastCursor;
-        private Point lastFormLocation;
-
         public void SetDefaultFormProperties(Form form)
         {
             // Set the form to be borderless  

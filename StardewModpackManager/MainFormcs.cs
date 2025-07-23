@@ -20,6 +20,7 @@ namespace StardewModpackManager
         private bool isDragging = false;
         private List<Panel> wizardPanelPages = new List<Panel>();
         private int wizardPanelPageIndex = 0;
+        private bool isWizardComplete = false;
         private Point lastCursor;
         private Point lastFormLocation;
         public MainFormcs()
@@ -51,18 +52,19 @@ namespace StardewModpackManager
             string xmlPathCreated = xmlService.CreateXmlFileIfNotExists();
 
             // Checks if Wizard is complete. If value doesnt exist, it will add to it and set it to false
-            bool isWizardComplete = IsWizardComplete(xmlService, xmlPathCreated);
+            isWizardComplete = IsWizardComplete(xmlService, xmlPathCreated);
 
             if (!isWizardComplete)
             {
                 xmlService.AddXMLKeyValue(xmlPathCreated, "userProfile", "isWizardComplete", "false");
 
                 CommonUtils.DefaultPanel(wizardPanel_pg1);
-                CenterPanel(wizardPanel_pg1);
+                CenterPictureBox(setupWizardImg, wizardPanel_pg1);
                 wizardPanel_pg1.Show();
                 wizardPanelPageIndex = GetIndexOfPanel(wizardPanel_pg1);
                 // Add the wizard panel to the list of pages
                 wizardPanelPages.Add(wizardPanel_pg1);
+                wizardPanelPages.Add(wizardPanel_pg2);
             }
             else
             {
@@ -120,7 +122,15 @@ namespace StardewModpackManager
                 this.WindowState = FormWindowState.Normal;
             }
             SetButtonLocation();
-            CenterPanel(wizardPanelPages[wizardPanelPageIndex]);
+            // If wizard is continuing, then center both picture box and panel, otherwise just panel
+            if (!isWizardComplete)
+            {
+                CenterPictureBox(setupWizardImg, wizardPanelPages[wizardPanelPageIndex]);
+            }
+            else
+            {
+                CenterPanel(wizardPanelPages[wizardPanelPageIndex]);
+            }
         }
 
         private int GetFormSize(FormSize formSize)
@@ -149,7 +159,7 @@ namespace StardewModpackManager
             maximizeRestoreBtn.Location = new Point(startX + minimizeBtn.Width + buttonSpacing, y);
             closeBtn.Location = new Point(startX + minimizeBtn.Width + maximizeRestoreBtn.Width + (buttonSpacing * 2), y);
         }
-        
+
         private static bool IsWizardComplete(XmlService xmlService, string xmlPathCreated)
         {
             try
@@ -180,6 +190,29 @@ namespace StardewModpackManager
             panel.Top = (this.ClientSize.Height - panel.Height) / 2;
         }
 
+        private void CenterPictureBox(PictureBox pictureBox, Panel? panel = null)
+        {
+            if (panel != null)
+            {
+
+                // Center the picture box and panel within the form
+                pictureBox.Left = (this.ClientSize.Width - pictureBox.Width) / 2;
+                pictureBox.Top = (this.ClientSize.Height - pictureBox.Height) / 2 - 150;
+
+                // Center the panel within the form and picture box above
+                panel.Left = (this.ClientSize.Width - panel.Width) / 2;
+                panel.Top = (this.ClientSize.Height - panel.Height) / 2 + pictureBox.Height - 150;
+
+            }
+            else
+            {
+                // Center the panel within the form  
+                pictureBox.Left = (this.ClientSize.Width - pictureBox.Width) / 2;
+                pictureBox.Top = (this.ClientSize.Height - pictureBox.Height) / 2;
+            }
+
+        }
+
         private int GetIndexOfPanel(Panel panel)
         {
             // tab index will start from 1, so we subtract 1 to get the index
@@ -190,8 +223,13 @@ namespace StardewModpackManager
         {
             wizardPanelPages[wizardPanelPageIndex].Hide();
             wizardPanelPageIndex++;
+            CenterPictureBox(setupWizardImg, wizardPanelPages[wizardPanelPageIndex]);
             wizardPanelPages[wizardPanelPageIndex].Show();
         }
 
+        private void wizardPanel_btn1_pg1_Click(object sender, EventArgs e)
+        {
+            NextPageOfPanel(wizardPanelPageIndex);
+        }
     }
 }
