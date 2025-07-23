@@ -109,7 +109,7 @@
             // 
             // wizardPanel_btn1_pg1
             // 
-            wizardPanel_btn1_pg1.BackColor = Color.FromArgb(64, 192, 87);
+            wizardPanel_btn1_pg1.BackColor = Color.FromArgb(73, 130, 199);
             wizardPanel_btn1_pg1.FlatAppearance.BorderSize = 0;
             wizardPanel_btn1_pg1.FlatStyle = FlatStyle.Flat;
             wizardPanel_btn1_pg1.Font = new Font("Segoe UI Semibold", 10.8301888F, FontStyle.Regular, GraphicsUnit.Point);
